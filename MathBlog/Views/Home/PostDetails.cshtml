@@ -1,0 +1,31 @@
+﻿@using MathBlog.VeiwModels
+@model HomeViewModel
+
+<div class="jumbotron">
+    <h1>@Model.Name</h1>
+    <p>@Model.Content</p>
+    <p>Created by @Model.UserName</p>
+    <p>at: @Model.DateCreated</p>
+    @if (Model.Comments != null)
+    {
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Comments</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var comment in Model.Comments)
+                    {
+                        <tr><td>@comment.Content</td></tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    }
+    @Html.ActionLink("Add comment", "AddComment", "Comment", new { Id = Model.Id }, null)
+    </div>
+

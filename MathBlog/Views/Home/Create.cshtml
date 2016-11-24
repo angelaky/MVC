@@ -1,0 +1,19 @@
+﻿@using MathBlog.VeiwModels
+@model HomeViewModel
+<h2>Create your post</h2>
+
+@using (Html.BeginForm("Create", "Home", FormMethod.Post))
+{
+ 
+    <div>
+    @Html.LabelFor(m=>m.Name)
+    @Html.TextBoxFor(m => m.Name, new { @class = "form-contol" })</div>
+    
+    <div>
+    @Html.LabelFor(m => m.Content)
+    @Html.TextBoxFor(m => m.Content, new {@class = "form-contol" })</div>
+
+    <input type="submit" />
+
+}
+

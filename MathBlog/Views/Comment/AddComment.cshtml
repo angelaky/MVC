@@ -1,0 +1,17 @@
+﻿@using MathBlog.VeiwModels
+@model CommentViewModel
+<h2>Create your comment</h2>
+
+@using (Html.BeginForm("AddComment", "Comment" , FormMethod.Post))
+{
+
+     <div>
+        @Html.LabelFor(m => m.Content)
+        @Html.TextBoxFor(m => m.Content, new { @class = "form-contol" })
+    </div>
+
+    <input type="submit" />
+
+}
+
+
